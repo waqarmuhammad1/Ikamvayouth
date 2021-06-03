@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+    <title>IKAMVAYOUTH DASHBOARD</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
+        media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <div class="navbar-fixed">
+
+        <!-- Dropdown Structure -->
+      
+        <div class="nav-wrapper">
+            <nav class="grey darken-4" role="navigation">
+                <a href="#!" class="brand-logo white-text"><img src="img/logo.png" alt="Mountain View" style="width:50px;height:60px;">IKAMVAYOUTH DASHBOARD</a>
+            </nav>
+            
+               
+        </div>
+    </div>
+    </div>
+</header>
+<br>
+<aside>
+
+    <ul id="slide-out" class="side-nav grey darken-4 fixed">
+        <div class="white-text flow-text">
+            <li><a href="index.html" class="white-text truncate">Student Enrollment</a></li>
+            <li><a href="attendance.html" class="white-text truncate">Student Attendance</a></li>
+            <li><a href="kickout.html" class="white-text">Kickout Reason</a></li>
+            <li><a href="#" class="orange-text">Academic</a></li>
+            <li><a href="tutors.html" class="white-text">Tutors</a></li>
+            <li><a href="grade.html" class="white-text truncate">Grade 12 Tracking</a></li>
+
+        </div>
+    </ul>
+</aside>
+
+<body>
+    <div class="">
+        <div class="row">
+
+            <div class="col s12 m12 l8 offset-l2">
+                <h5>Academic</h5>
+                <div id='progress_container' class="hero-content">
+                    <div class="preloader-wrapper active big ">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="academicBar"></div>
+            </div>
+
+            <div class="col s12 m12 l2">
+                <br>
+                <br>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li class="">
+                        <div class="collapsible-header"><i class="material-icons">details</i>Who</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+
+                            <ul>
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="group1" type="radio" id="allbranches" value="allbranches" />
+                                        <label for="allbranches" class="orange-text">All Branches</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="group1" type="radio" id="branches" value="Branch" /> <label for="branches"
+                                            class="orange-text">Branches:</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <select multiple id="branches-select" disabled="false">
+                                      </select>
+                                </li>
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="group1" type="radio" id="allschools" value="allschools" /> <label for="allschools"
+                                            class="orange-text">All Schools</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="group1" type="radio" id="schools" value="School" /> <label for="schools"
+                                            class="orange-text">Schools: </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <select multiple id="schools-select" disabled="true">                                            
+                                      </select></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">event_note</i>Time Period</div>
+                        <div class="collapsible-body filter-container">
+                            <ul>
+
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="time_selection" type="radio" id="time_selected" value="time_selected" checked="checked" />
+                                        <label for="time_selected" class="orange-text">Date Selection</label>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    From: <input placeholder="Date" id="date_from" type="text" class="datepickerFrom">
+                                </li>
+                                <li>
+                                    To: <input placeholder="Date" id="date_to" type="text" class="datepickerTo">
+                                </li>
+
+
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="time_selection" type="radio" id="time_term_year" value="time_term_year" />
+                                        <label for="time_term_year" class="orange-text">Term & Year Selection</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    From Term:
+                                </li>
+                                <li>
+                                    <div class="row">
+
+                                        <div class="col s6">
+                                            <select id="term-select_to">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                            </select>
+                                        </div>
+
+                                        <div class="col s6">
+                                            <select id="select_years_to">
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <li>
+                                    Till Term:
+                                </li>
+                                <li>
+                                    <div class="row">
+
+                                        <div class="col s6">
+                                            <select id="term-select_from">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                         </select>
+                                        </div>
+
+                                        <div class="col s6">
+                                            <select id="select_years_from">
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">bookmark</i>Comparision</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="term-checkbox" />
+                                    <label for="term-checkbox">Terms Comparison:</label>
+                                </li>
+
+
+                                From Term:
+                    </li>
+                    <li>
+                        <select id="term-select">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                    </select></li>
+                    <li>
+                        <li>
+                            Till Term:
+                        </li>
+                        <select id="term-select2">
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                </select></li>
+
+                    </ul>
+                    </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">grade</i>Grades</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <li>
+                                    <select multiple id="grades-select">
+                                        <option value="G08,Gr08">Grade 8</option>
+                                        <option value="G09,Gr09">Grade 9</option>
+                                        <option value="G10,Gr10">Grade 10</option>
+                                        <option value="G11,Gr11">Grade 11</option>
+                                        <option value="G12,Gr12">Grade 12</option>                                                                   
+                                    </select></li>
+                                <a class="btn center orange" id="generateSubjects">Generate Subjects</a>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="collapsible-header"><i class="material-icons">dehaze</i>Subjects</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="subjectGroup" type="radio" id="allsubjects" value="allsubjects" />
+                                        <label for="allsubjects" class="orange-text">All Subjects</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="radio-item">
+                                        <input name="subjectGroup" type="radio" id="subjects" value="subjects" /> <label for="subjects"
+                                            class="orange-text">Select Subjects:</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <select multiple class="flow-text" id="subjects-select">                                                        
+                                              </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="collapsible-header"><i class="material-icons">view_week</i>Y-axis</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <li>
+                                    <select class="flow-text" id="flag-select">
+                                            <option value="1">Average marks</option>
+                                            <option value="2">% of students that pass</option>
+                                            <option value="3">Number of distinctions</option>
+                                            <option value="4">Number taking subject</option>
+                                            
+                                          </select>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <a class="btn orange" id="drawgraph">Draw graph</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l8 offset-l2">
+            <h5>Academic, Trend Over Time</h5>
+
+            <div id="academicLine">
+                <!-- Plotly chart will be drawn inside this DIV -->
+            </div>
+        </div>
+        <div class="col s12 m12 l2">
+            <br>
+            <br>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li class="">
+                    <div class="collapsible-header "><i class="material-icons">details</i>Branches</div>
+                    <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                        <ul>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group2" type="radio" id="allbranches2" value="allbranches" />
+                                    <label for="allbranches2" class="orange-text">All Branches</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group2" type="radio" id="Branch2" value="Branch" />
+                                    <label for="Branch2" class="orange-text">Select Branch</label>
+                                </div>
+                            </li>
+                            <li>
+                                <select multiple id="branches-select2">
+                                      </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="collapsible-header "><i class="material-icons">event_note</i>Time Period</div>
+                    <div class="collapsible-body filter-container">
+                        <ul>
+                            <!-- <li>
+                                From: <input type="text" class="datepickerFrom2">
+                            </li>
+                            <li>
+                                To: <input type="text" class="datepickerTo2">
+                            </li> -->
+                            <li>
+                                <div class="radio-item">
+                                    <input name="time_selection_2" type="radio" id="time_selected_2" value="time_selected_2" checked="checked" />
+                                    <label for="time_selected_2" class="orange-text">Date Selection</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                From: <input placeholder="Date" type="text" class="datepickerFrom2">
+                            </li>
+                            <li>
+                                To: <input placeholder="Date" type="text" class="datepickerTo2">
+                            </li>
+
+
+                            <li>
+                                <div class="radio-item">
+                                    <input name="time_selection_2" type="radio" id="time_term_year_2" value="time_term_year_2" />
+                                    <label for="time_term_year_2" class="orange-text">Term & Year Selection</label>
+                                </div>
+                            </li>
+                            <li>
+                                From Term:
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <select id="term-select_to_2">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                            </select>
+                                    </div>
+
+                                    <div class="col s6">
+                                        <select id="select_years_to_2">
+                                            </select>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li>
+                                Till Term:
+                            </li>
+                            <li>
+                                <div class="row">
+
+                                    <div class="col s6">
+                                        <select id="term-select_from_2">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                         </select>
+                                    </div>
+                                    <div class="col s6">
+                                        <select id="select_years_from_2">
+                                            </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header "><i class="material-icons">grade</i>Grades</div>
+                    <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+
+                        <!-- <p><select id="country-select" class="browser-default"></select>
+                                        <label>Optgroups</label></p> -->
+                        <ul>
+                            <li>
+                                <select multiple id="grade-select2">
+                                    <option value="G08,Gr08">Grade 8</option>
+                                    <option value="G09,Gr09">Grade 9</option>
+                                    <option value="G10,Gr10">Grade 10</option>
+                                    <option value="G11,Gr11">Grade 11</option>
+                                    <option value="G12,Gr12">Grade 12</option>                                                        
+                                    </select>
+                            </li>
+                            <a class="btn center orange" id="generateSubjects2">Generate Subjects</a>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header "><i class="material-icons">subject</i>Subjects</div>
+                    <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                        <ul>
+                                <li>
+                                        <div class="radio-item">
+                                            <input name="subjectGroup2" type="radio" id="allsubjects2" value="allsubjects" />
+                                            <label for="allsubjects2" class="orange-text">All Subjects</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="radio-item">
+                                            <input name="subjectGroup2" type="radio" id="subjects2" value="subjects" /> <label for="subjects2"
+                                                class="orange-text">Select Subjects:</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                            <select multiple id="subjects-select2">
+                                                </select>
+                                    </li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+            <a class="btn orange" id="drawgraph2">Draw graph</a>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<!-- Plotly -->
+<script src="plotly-latest.min.js"></script>
+<script type="text/javascript" src="controllers/academic.js"></script>
+
+</html>

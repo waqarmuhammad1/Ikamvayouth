@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>IKAMVAYOUTH DASHBOARD</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
+        media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <div class="navbar-fixed">
+        <!-- Dropdown Structure -->
+       
+        <div class="nav-wrapper">
+            <nav class="grey darken-4" role="navigation">
+                <a href="#!" class="brand-logo white-text"><img src="img/logo.png" alt="Mountain View" style="width:50px;height:60px;">IKAMVAYOUTH DASHBOARD</a>
+            </nav>
+            
+        </div>
+    </div>
+    </div>
+</header>
+<br>
+<aside>
+    <ul id="slide-out" class="side-nav grey darken-4 fixed">
+        <div class="white-text">
+            <li><a href="index.html" class="white-text">Student Enrollment</a></li>
+
+            <li><a href="attendance.html" class="white-text truncate">Student Attendance</a></li>
+            <li><a href="kickout.html" class="white-text truncate">Kickout Reason</a></li>
+            <li><a href="academic.html" class="white-text">Academic</a></li>
+            <li><a href="tutors.html" class="white-text">Tutors</a></li>
+            <li><a href="#" class="orange-text truncate">Grade 12 Tracking</a></li>
+        </div>
+    </ul>
+</aside>
+
+<body>
+
+    <div class="row">
+        <div class="col s12 m12 l8 offset-l2">
+            <h5>Grade 12 Tracking</h5>
+            <div class="row">
+                <div id='progress_container' class="hero-content">
+                    <div class="preloader-wrapper active big ">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l9">
+                    <div id="gradeBar"></div>
+
+                </div>
+                <div class="col s12 m12 l3">
+                    <div id="gradeBarAll"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m12 l2">
+            <!-- <br> <br> Select Excel file (.xlsx or .xls):
+            <input type="file" id="myFile" multiple="multiple"> -->
+
+            <!-- <button type="button" onclick="showDate()">Display file path</button>            
+            <p id="demo"></p> -->
+            <br>
+            <br>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li class="">
+                    <div class="collapsible-header "><i class="material-icons">dehaze</i>X-axis</div>
+                    <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+
+                        <ul>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group1" type="radio" id="allbranches" value="allbranches" /> <label for="allbranches"
+                                        class="orange-text">All Branches</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group1" type="radio" id="branches" value="Branch" /> <label for="branches"
+                                        class="orange-text">Select Branches:</label>
+                                </div>
+                            </li>
+                            <li>
+                                <select multiple id="branches-select">
+                                                          </select>
+                            </li>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group1" type="radio" id="allschools" value="allschools" /> <label for="allschools"
+                                        class="orange-text">All Schools</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group1" type="radio" id="schools" value="School Attending" /> <label for="schools"
+                                        class="orange-text">Select Schools: </label>
+                                </div>
+                            </li>
+                            <li>
+                                <select multiple id="schools-select">                                            
+                                                          </select></li>
+                            <li>
+                        </ul>
+                    </div>
+                    </li>
+                    <li class="">
+                        <div class="collapsible-header "><i class="material-icons">view_week</i>Y-axis</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <li>
+                                    <select id="options-select">
+                                                <option value="1" >Pass type Gr 11</option>
+                                                <option value="2">Pass type Most recent term</option>
+                                                <option value="3">Applied to</option>
+                                                <option value="4">Application status</option>
+                                                <option value="5">Funding application</option>
+                                                <option value="6">Funding status</option>
+                                                <option value="7">Final results Gr 12</option>
+                                                <option value="8">Placement next year</option>
+                                              </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="collapsible-header "><i class="material-icons">event_note</i>Time Period</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <select multiple id="year-select">                                      
+                                      </select>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+            <a class="btn orange" id="drawgraph">Draw graph</a>
+            <h5 id="heading"> </h5>
+            <p id="data"></p>
+            <h5 id="heading2"> </h5>
+            <p id="data2"></p>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col s12 m12 l8 offset-l2">
+            <h5>Grade 12 Tracking, Trend Over Time</h5>
+
+            <div id="gradeLine">
+                <!-- Plotly chart will be drawn inside this DIV -->
+            </div>
+        </div>
+        <div class="col s12 m12 l2">
+            <br>
+            <br>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li class="">
+                    <div class="collapsible-header "><i class="material-icons">radio_button_unchecked</i>Who to include</div>
+                    <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+
+                        <ul>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group2" type="radio" id="allbranches2" value="allbranches" /> <label for="allbranches2"
+                                        class="orange-text">All Branches</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group2" type="radio" id="branches1" value="Branch" /> <label for="branches1"
+                                        class="orange-text">Select Branches:</label>
+                                </div>
+                            </li>
+                            <li>
+                                <select multiple id="branches-select2">
+                                                  </select>
+                            </li>
+                            <li>
+                                    <div class="radio-item">
+                                        <input name="group2" type="radio" id="allschools2" value="allschools" /> <label for="allschools2"
+                                            class="orange-text">All Schools</label>
+                                    </div>
+                                </li>
+                            <li>
+                                <div class="radio-item">
+                                    <input name="group2" type="radio" id="schools1" value="School Attending" /> <label for="schools1"
+                                        class="orange-text">Select Schools: </label>
+                                </div>
+                            </li>
+                            <li>
+                                <select multiple id="schools-select2">                                            
+                                                  </select></li>
+                            <li>
+                        </ul>
+
+                    </div>
+                    <li class="">
+                        <div class="collapsible-header "><i class="material-icons">details</i>Categories</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <li>
+                                    <select id="options-select2">
+                                                        <option value="9" >Pass type Gr 11</option>
+                                                        <option value="10">Final results Gr 12</option>
+                                                        <option value="11">Applied to</option>                                                                                                                
+                                                        <option value="12">Placement next year</option>
+                                                      </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="collapsible-header "><i class="material-icons">event_note</i>Time Period</div>
+                        <div class="collapsible-body filter-container" style="display: none; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                            <ul>
+                                <!-- <p id="year2">*No file selected*</p> -->
+                                From:
+                                <li> <select id="year-select2">                                      
+                                </select></li>
+                                To:
+                                <li>
+                                    <select id="year-select3">                                      
+                                    </select></li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+            <a class="btn orange" id="drawgraph2">Draw graph</a>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<!-- Plotly -->
+<script src="plotly-latest.min.js"></script>
+
+<script type="text/javascript" src="controllers/grade.js"></script>
+
+</html>
